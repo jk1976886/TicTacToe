@@ -37,12 +37,15 @@ public class main {
 
 		frame = new JFrame("TicTacToe");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(500, 500);
+		frame.setSize(500, 550);
 
 		JLabel player1 = new JLabel("X");
+		player1.setFont(new Font(player1.getFont().getName(), Font.PLAIN, 40));
 		JLabel player2 = new JLabel("O");
+		player2.setFont(new Font(player2.getFont().getName(), Font.PLAIN, 40));
+
 		playerTurn = new JLabel("X's turn", SwingConstants.CENTER);
-		playerTurn.setFont(new Font(playerTurn.getFont().getName(), Font.PLAIN, 20));
+		playerTurn.setFont(new Font(playerTurn.getFont().getName(), Font.PLAIN, 50));
 
 		JPanel gameMainPanel = new JPanel();
 		gameMainPanel.setLayout(new GridLayout(3, 3));
@@ -68,15 +71,15 @@ public class main {
 		JPanel innerPanel9 = new JPanel();
 		innerPanel9.setLayout(grid);
 
-		JButton btn1 = new JButton("put here 1");
-		JButton btn2 = new JButton("put here 2");
-		JButton btn3 = new JButton("put here 3");
-		JButton btn4 = new JButton("put here 4");
-		JButton btn5 = new JButton("put here 5");
-		JButton btn6 = new JButton("put here 6");
-		JButton btn7 = new JButton("put here 7");
-		JButton btn8 = new JButton("put here 8");
-		JButton btn9 = new JButton("put here 9");
+		JButton btn1 = new JButton();
+		JButton btn2 = new JButton();
+		JButton btn3 = new JButton();
+		JButton btn4 = new JButton();
+		JButton btn5 = new JButton();
+		JButton btn6 = new JButton();
+		JButton btn7 = new JButton();
+		JButton btn8 = new JButton();
+		JButton btn9 = new JButton();
 
 		ActionListener btnClicked = new ActionListener() {
 			@Override
@@ -92,6 +95,7 @@ public class main {
 				if (num == 1) {
 					btn1.setVisible(false);
 					innerPanel1.add(player);
+					
 					map[0][0] = curPlayer;
 				} else if (num == 2) {
 					btn2.setVisible(false);
